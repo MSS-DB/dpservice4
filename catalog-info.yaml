@@ -1,0 +1,31 @@
+# TODO: Edit this component to register more information about your repository with M-DEVx.
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  test: ${"name":"datapower4","destination":{"host":"github.com","owner":"TKH-Maybank-Organization","repo":"dpservice4"}}
+  name: "datapower4"
+  links:
+    - url: https://githubbeta.maybank.com
+      title: Github Maybank (Beta)
+      icon: dashboard
+  annotations:
+    # TODO: Github CI/CD, Pull Request, Repository Info etc.
+    github.com/project-slug: TKH-Maybank-Organization/datapower4
+#    github.com/project-slug: MY-MAYBANK/datapower4
+    # TODO: Add Enterprise sentry project ID
+    sentry.io/project-slug: datapower4
+#    sentry.io/project-slug: MY-MAYBANK/datapower4
+    # TODO: Kubernetes: https://backstage.io/docs/features/kubernetes/configuration/
+    backstage.io/kubernetes-id: banking-dev
+    backstage.io/kubernetes-namespace: banking-dev
+    backstage.io/kubernetes-label-selector: 'app=datapower4,component=banking-dev'
+    backstage.io/techdocs-ref: dir:.
+
+spec:
+  type: service
+  owner: group:developer
+  lifecycle: experimental
+  dependsOn:
+    - resource:default/artists-db
+  providesApis:
+    - spotify
